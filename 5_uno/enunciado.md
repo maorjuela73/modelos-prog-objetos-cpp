@@ -1,10 +1,10 @@
-**Diseño de un Juego Simplificado de Cartas Uno en C++ Usando Programación Orientada a Objetos**
+## Diseño de un Juego Simplificado de Cartas Uno en C++ Usando Programación Orientada a Objetos
 
 El objetivo de este ejercicio es implementar un juego simplificado de cartas Uno utilizando los principios de programación orientada a objetos en C++. Este juego será para dos jugadores y seguirá reglas básicas del Uno.
 
 ---
 
-**Descripción del Juego:**
+### Descripción del Juego
 
 - **Jugadores**: 2
 - **Cartas**: Números del 0 al 9 en cuatro colores: rojo, verde, azul y amarillo.
@@ -17,7 +17,7 @@ El objetivo de este ejercicio es implementar un juego simplificado de cartas Uno
 
 ---
 
-**Clases Principales:**
+### Clases Principales
 
 1. **`Carta`**: Representa una carta del juego con atributos como color y número.
 2. **`Baraja`**: Contiene un conjunto de cartas y métodos para barajar y repartir.
@@ -30,8 +30,9 @@ El objetivo de este ejercicio es implementar un juego simplificado de cartas Uno
 
 #### 1. Clase `Carta`
 
+**Archivo:** `Carta.h`
+
 ```cpp
-// Carta.h
 #ifndef CARTA_H
 #define CARTA_H
 
@@ -54,8 +55,9 @@ private:
 #endif
 ```
 
+**Archivo:** `Carta.cpp`
+
 ```cpp
-// Carta.cpp
 #include "Carta.h"
 
 Carta::Carta(Color color, int numero) : color(color), numero(numero) {}
@@ -76,8 +78,9 @@ std::string Carta::toString() const {
 
 #### 2. Clase `Baraja`
 
+**Archivo:** `Baraja.h`
+
 ```cpp
-// Baraja.h
 #ifndef BARAJA_H
 #define BARAJA_H
 
@@ -98,8 +101,9 @@ private:
 #endif
 ```
 
+**Archivo:** `Baraja.cpp`
+
 ```cpp
-// Baraja.cpp
 #include "Baraja.h"
 #include <algorithm>
 #include <random>
@@ -131,8 +135,9 @@ bool Baraja::estaVacia() const {
 
 #### 3. Clase `Jugador`
 
+**Archivo:** `Jugador.h`
+
 ```cpp
-// Jugador.h
 #ifndef JUGADOR_H
 #define JUGADOR_H
 
@@ -157,8 +162,9 @@ private:
 #endif
 ```
 
+**Archivo:** `Jugador.cpp`
+
 ```cpp
-// Jugador.cpp
 #include "Jugador.h"
 #include <iostream>
 
@@ -198,8 +204,9 @@ void Jugador::mostrarMano() const {
 
 #### 4. Clase `Juego`
 
+**Archivo:** `Juego.h`
+
 ```cpp
-// Juego.h
 #ifndef JUEGO_H
 #define JUEGO_H
 
@@ -223,8 +230,9 @@ private:
 #endif
 ```
 
+**Archivo:** `Juego.cpp`
+
 ```cpp
-// Juego.cpp
 #include "Juego.h"
 #include <iostream>
 
@@ -282,8 +290,9 @@ void Juego::turnoJugador(Jugador& jugadorActual) {
 
 #### 5. Función Principal
 
+**Archivo:** `main.cpp`
+
 ```cpp
-// main.cpp
 #include "Juego.h"
 
 int main() {
@@ -307,27 +316,19 @@ int main() {
 
 ---
 
-**Notas Adicionales:**
+### Cómo Ejecutar el Programa
 
-- Este código es una simplificación del juego real de Uno y está diseñado para ilustrar conceptos de programación orientada a objetos en C++.
-- No se manejan cartas especiales como "Reversa", "Salta" o "Toma dos".
-- La interacción con el usuario es mínima y está orientada a la consola para simplificar la implementación.
+1. Compila el programa usando el siguiente comando:
 
----
+   ```bash
+   g++ main.cpp Carta.cpp Baraja.cpp Jugador.cpp Juego.cpp -o uno
+   ```
 
-**Cómo Ejecutar el Programa:**
+2. Ejecuta el programa compilado:
 
-1. Compila todos los archivos `.cpp` junto con sus correspondientes archivos de encabezado `.h`.
-
-```bash
-g++ main.cpp Carta.cpp Baraja.cpp Jugador.cpp Juego.cpp -o uno
-```
-
-2. Ejecuta el programa compilado.
-
-```bash
-./uno
-```
+   ```bash
+   ./uno
+   ```
 
 ---
 
@@ -337,6 +338,4 @@ g++ main.cpp Carta.cpp Baraja.cpp Jugador.cpp Juego.cpp -o uno
 - Implementa cartas especiales como "Reversa", "Salta" y "Toma dos".
 - Mejora la interacción con el usuario permitiendo ingresar nombres de jugadores y elegir cartas a jugar manualmente.
 
----
-
-Este ejercicio es ideal para practicar conceptos de clases, objetos, encapsulamiento y control de flujo en C++. ¡Diviértete programando!
+Este ejercicio es ideal para practicar los conceptos de clases, objetos, encapsulamiento y control de flujo en C++. ¡Disfruta programando y mejorando el juego!
